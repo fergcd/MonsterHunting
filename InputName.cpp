@@ -15,7 +15,7 @@ void InputName(sCharacter* character)	//플레이어의 이름을 입력받습니다. 이름 입�
 	printf("          ⇒ ");
 
 	do
-	{
+	{		
 		scanf("%s", character[0].name);
 
 		if(nameLength = strlen(character[0].name) > 10)	//이름 길이를 10byte로 제한

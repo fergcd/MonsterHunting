@@ -62,7 +62,7 @@ void MouthOpenClose(int motion, char BigMouth[][22])	//гц╥╧юл╬Н баба
 				printf("%s", BigMouth[row]);
 			}
 			Sleep(30);
-			//getch();
+			//_getch();
 			if(y < 12)
 			{
 				for(row = 0; row <= 3; row++)

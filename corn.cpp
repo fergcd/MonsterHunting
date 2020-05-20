@@ -56,7 +56,7 @@ void corn()	//螟熱熱
 			printf("%s", corn[row]);
 		}
 		Sleep(30);
-		//getch();
+		//_getch();
 		textcolor(14);
 		for(row = 0; row <= 3; row++)
 		{
@@ -67,7 +67,7 @@ void corn()	//螟熱熱
 				printf("%s", corn[row]);
 		}
 		Sleep(30);
-		//getch();
+		//_getch();
 	}
 
 	for(x = 0, y = 0; x <= 42; x += 2)

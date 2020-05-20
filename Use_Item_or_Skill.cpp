@@ -426,7 +426,7 @@ void Use_Item_or_Skill(int x, int y, int index, sCharacter* character)	//아이템 
 			CharacterExpression(index, character, 56);
 			break;
 		case 8:	//고자라니
-			CharacterExpression(index, character, 18);
+			CharacterExpression(index, character, 4444);
 			break;
 		case 9:	//곱등이 아야
 			CharacterExpression(index, character, 96);

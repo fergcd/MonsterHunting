@@ -7,7 +7,7 @@ void Reward(int index, sCharacter* character)	//각 몬스터를 쓰러트렸을 때 보상 �
 	char nothing[2][22] = {"  ",
 						   "  "};
 	
-	getch();
+	int dummy = _getch();
 	CharacterExpression(0, character, 0);
 	eraseMSG();
 

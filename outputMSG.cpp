@@ -6,7 +6,7 @@ void outputMSG(char* MSG)	//Battle에서 메세지 출력 함수
 	char First[3];
 
 	//printf("%d", strlen(MSG));
-	//getch();
+	//_getch();
 
 	for(arr = 0; arr <= strlen(MSG) / 2 - 1; arr++)
 	{

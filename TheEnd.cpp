@@ -20,6 +20,6 @@ void TheEnd(sCharacter* character, char KillingCount)	//몬스터 10마리를 다 쓰러�
 	gotoxy(19, 20);
 	Sleep(1500);
 	printf("아무키나 누르면 타이틀 화면으로 이동합니다.");
-	getch();
+	_getch();
 	system("cls");
 }

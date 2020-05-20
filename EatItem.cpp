@@ -52,7 +52,7 @@ void EatItem(int item, sCharacter* character, char Item[][22])	//¾ÆÀÌÅÛ ¼·Ãë
 			//gotoxy(1, 1);
 			//printf("%d %d", x - addx, y + addy);
 			if(addx == 12 && item == 13)
-				strcpy(Item[2], "£¨0ìÌ0£©");
+				strcpy_s(Item[2], "£¨0ìÌ0£©");
 			ItemAcquireFunction(x - addx, y + addy, MaxRow, Item);
 			ItemAcquireFunction(9, 6, 3, BigMouth);
 			for(row = 15; row >= 10; row--)

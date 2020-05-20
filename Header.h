@@ -1,8 +1,8 @@
 #include<stdio.h>	//printf("");, fflush(stdin); 쓰려고
-#include<conio.h>	//getch(); 쓰려고
+#include<conio.h>	//_getch(); 쓰려고
 #include<windows.h>	//gotoxy(int,int);, textcolor();, Sleep(); 쓰려고
 #include<stdlib.h>	//system("cls"); 쓰려고
-#include<string.h>	//strcpy( , ); 쓰려고
+#include<string.h>	//strcpy_s( , ); 쓰려고
 #include<math.h>	//abs(); 쓰려고
 
 
@@ -40,7 +40,7 @@ void resetFunction(sCharacter* character, int index, int HealthPoint, int MaxHea
 void SetCursorType(CURSOR_TYPE c);	//커서의 유무, 크기를 설정합니다.
 void StateDisplay(int index, sCharacter* character, int previousHP, int previousAP, int x, int y);	//Battle에서 캐릭터 상태 표시
 void eraseMSG();	//메세지창 내용 지우기
-void getch_eraseMSG();	//getch()랑 eraseMSG() 기능 합친 함수. 여러번 쓰이길레 만들었습니다.
+void getch_eraseMSG();	//_getch()랑 eraseMSG() 기능 합친 함수. 여러번 쓰이길레 만들었습니다.
 void outputMSG(char* MSG);	//Battle에서 메세지 출력 함수
 void CharacterExpression(int index, sCharacter* character, int WhatExpression);	//Battle에서 캐릭터의 표정 변화
 void CharacterDisplay(int index, sCharacter* character);	//Battle에서 캐릭터 이미지 표현

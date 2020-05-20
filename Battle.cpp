@@ -4,6 +4,7 @@ void Battle(int index, sCharacter* character)	//전투
 {
 	char MSG[200];	//메세지를 저장할 문자열
 	int turn = 1, x = 10, decide = 0, previousPlayerHP, previousMonsterHP, previousMonsterAP;	//turn은 플레이어와 몬스터가 번갈아가며 공격하게 만들기 위해 쓰이는 변수
+	int dummy = 0;
 
 	CharacterExpression(0, character, 0);
 	StateDisplay(0, character, 0, character[0].AttackPoint, 40, 15);
@@ -15,7 +16,7 @@ void Battle(int index, sCharacter* character)	//전투
 
 	//메세지출력 사이즈 (4, 22)~(75, 24)
 	//printf("%s이(가) 나타났다!", character[index].name);
-	sprintf(MSG, "%s이(가) 나타났다!", character[index].name);
+	sprintf_s(MSG, "%s이(가) 나타났다!", character[index].name);
 	outputMSG(MSG);
 
 	getch_eraseMSG();
@@ -53,7 +54,7 @@ void Battle(int index, sCharacter* character)	//전투
 			gotoxy(10, 23);
 			while(decide == 0)
 			{
-				switch(getch())	//3(7, 23), (26, 23), (45, 23), (64, 23){70}3 공백72칸 간격19
+				switch(_getch())	//3(7, 23), (26, 23), (45, 23), (64, 23){70}3 공백72칸 간격19
 				{
 				case 75:	//왼쪽
 					if(x >= 20 && x <= 60)
@@ -120,7 +121,7 @@ void Battle(int index, sCharacter* character)	//전투
 								break;
 							printf("%s이(가) %s을 먹었습니다.", character[0].name, character[2].name);
 							ItemAcquire(12, character);
-							getch();
+							dummy = _getch();
 							eraseMSG();
 							printf("맛은 별로였습니다.");
 							CharacterExpression(0, character, 1);
@@ -160,8 +161,8 @@ void Battle(int index, sCharacter* character)	//전투
 							if(index == 10 && character[index].AttackPoint == 0)
 							{
 								printf("%s: ...", character[index].name);
-								getch();
-								CharacterExpression(index, character, 69);
+								dummy = _getch();
+								CharacterExpression(index, character, 66);
 								eraseMSG();
 								printf("%s: 순순히 사과하면 유혈사태는 일어나지 않을 것입니다.", character[index].name);
 								getch_eraseMSG();
@@ -175,7 +176,7 @@ void Battle(int index, sCharacter* character)	//전투
 							{
 								printf("%s: 죽어야 정신을 차리겠군.", character[index].name);
 								getch_eraseMSG();
-								CharacterExpression(index, character, 6969);
+								CharacterExpression(index, character, 6666);
 								CharacterExpression(0, character, 14);
 								CharacterBlink(index, character, 14);
 								character[index].AttackPoint = 444;
@@ -223,7 +224,7 @@ void Battle(int index, sCharacter* character)	//전투
 			{
 				gotoxy(4, 22);
 				printf("%s는 무저항 비폭력 주의자이기 때문에 강제로 전투를 종료시켰습니다.", character[index].name);
-				getch();
+				dummy = _getch();
 				break;
 			}
 		}
@@ -237,7 +238,7 @@ void Battle(int index, sCharacter* character)	//전투
 			if(index == 10 && character[index].AttackPoint == 444)
 			{
 				corn();
-				CharacterExpression(0, character, 4444);
+				CharacterExpression(0, character, 444);
 			}
 			else
 			{
@@ -270,9 +271,9 @@ void Battle(int index, sCharacter* character)	//전투
 				break;
 			case 8:
 				if(x == 20)
-					CharacterExpression(index, character, 218);
+					CharacterExpression(index, character, 444444);
 				else
-					CharacterExpression(index, character, 84);
+					CharacterExpression(index, character, 44444);
 				break;
 			case 9:
 				CharacterExpression(index, character, 94);
@@ -288,16 +289,16 @@ void Battle(int index, sCharacter* character)	//전투
 		{
 			printf("당신은 패배했습니다.");
 			if(index == 10 && character[index].AttackPoint == 444)
-				CharacterExpression(0, character, 4444);
-			else
 				CharacterExpression(0, character, 444);
+			else
+				CharacterExpression(0, character, 44);
 			CharacterDown(0, character);
 			if(x == 40)
 			{
 				getch_eraseMSG();
 				printf("%s: ㅋㅋㅋ", character[index].name);
 			}
-			getch();
+			dummy = _getch();
 		}
 
 		x = 10;

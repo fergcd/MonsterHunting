@@ -35,7 +35,7 @@ int Title()	//타이틀화면을 띄워줍니다. 게임 시작/종료 선택이 가능합니다.
 
 	while(select != 13)
 	{
-		select = getch();	//getch는 getchar와 달리 문자를 입력하자마자 다음 문장으로 넘어가기 때문에 문자 입력 후 Enter키를 눌러줄 필요가 없습니다.
+		select = _getch();	//_getch는 _getchar와 달리 문자를 입력하자마자 다음 문장으로 넘어가기 때문에 문자 입력 후 Enter키를 눌러줄 필요가 없습니다.
 		switch(select)
 		{
 		case 72:	//위

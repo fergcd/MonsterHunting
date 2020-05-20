@@ -30,7 +30,7 @@ int Select(sCharacter* character)	//상대할 몬스터 선택
 
 	while(NoDuplication == 1)	//안쓰러트린 몬스터 선택할 때까지
 	{
-		switch(getch())
+		switch(_getch())
 		{
 		case 72:	//위
 			if(y == 2)
