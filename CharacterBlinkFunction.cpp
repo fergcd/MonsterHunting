@@ -1,47 +1,68 @@
 #include"Header.h"
 
-void CharacterBlinkFunction(int index, sCharacter* character, int x, int y, int WhatBlink)	//CharacterBlink에서 쓰이는 함수
+void CharacterBlinkFunction(eCharacterName characterName, sCharacter* character, int x, int y, WORD color)	//CharacterBlink에서 쓰이는 함수
 {
-	int blink = 1, color = 0, row = 1;
+	int blinkCount = 1;
+	bool bIsColored = false;
 
-	while(blink <= 20)
+	while (blinkCount <= 20)
 	{
-		if(color == 0)
+		if (false == bIsColored)
 		{
-			textcolor(WhatBlink);	
-			color++;
+			textcolor(color);
+			bIsColored = true;
 		}
 		else
 		{
-			textcolor(7);
-			color--;
+			textcolor(LIGHTGRAY);
+			bIsColored = false;
 		}
 
-		if(x == 3)
-			CharacterExpression(0, character, WhatBlink);
+		if (3 == x)
+		{
+			switch (color)
+			{
+			case RED:
+				CharacterExpression(eCharacterName::Player, character, eCharacterExpression::PlayerDamaged);
+				break;
+			case LIGHTBLUE:
+				CharacterExpression(eCharacterName::Player, character, eCharacterExpression::PlayerPowerUp);
+				break;
+			case LIGHTGREEN:
+				CharacterExpression(eCharacterName::Player, character, eCharacterExpression::PlayerHealthUp);
+				break;
+			case YELLOW:
+				CharacterExpression(eCharacterName::Player, character, eCharacterExpression::PlayerWhatThe);
+				break;
+			default:
+				break;
+			}			
+		}
 		else
 		{
-			if(WhatBlink == 4)
+			if (FOREGROUND_RED == color)
 			{
-				switch(index)
+				switch(characterName)
 				{
-				case 5:
-					CharacterExpression(index, character, 56);
+				case eCharacterName::GrassHopper:
+					CharacterExpression(characterName, character, eCharacterExpression::GrassHopperDamaged);
 					break;
-				case 9:
-					CharacterExpression(index, character, 96);
+				case eCharacterName::CamelCriket:
+					CharacterExpression(characterName, character, eCharacterExpression::CamelCriketDamaged);
 					break;
 				default:
-					CharacterDisplay(index, character);
+					CharacterDisplay(characterName, character);
 					break;
 				}
 			}
 			else
-				CharacterDisplay(index, character);
+			{
+				CharacterDisplay(characterName, character);
+			}
 		}
 		
 		Sleep(30);
 		
-		blink++;
+		blinkCount++;
 	}
 }

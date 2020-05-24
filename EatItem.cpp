@@ -18,7 +18,14 @@ void EatItem(int item, sCharacter* character, char Item[][22])	//æ∆¿Ã≈€ º∑√Î
 						     "        ",
 						     "       "};
 
-	int x, y, row, addx, addy, MaxRow, munch, frame;
+	int x = 0;
+	int y = 0;
+	int row = 0;
+	int addx = 0;
+	int addy = 0;
+	int MaxRow = 0;
+	int munch = 0;
+	int frame = 0;
 
 	if(item != 4)
 	{
@@ -42,6 +49,8 @@ void EatItem(int item, sCharacter* character, char Item[][22])	//æ∆¿Ã≈€ º∑√Î
 			x = 26;
 			y = 6;
 			MaxRow = 6;
+			break;
+		default:
 			break;
 		}
 

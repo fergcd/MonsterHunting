@@ -1,22 +1,30 @@
 #include"Header.h"
 
-int Select(sCharacter* character)	//상대할 몬스터 선택
+eCharacterName Select(sCharacter* character)	//상대할 몬스터 선택
 {
-	int x = 1, y = 1, index = 1, NoDuplication = 1, SelectedMonster = 0;
+	int x = 1;
+	int y = 1;
+	int index = 1;
+	int NoDuplication = 1;
+	eCharacterName selectedMonster = eCharacterName::Player;
 
-	while(index <= 10)	//상대할 몬스터 목록 출력
+	while (index <= 10)	//상대할 몬스터 목록 출력
 	{
 		if(character[index].HealthPoint <= 0)	//쓰러트린 몬스터는 목록에서 안보이게 합니다.
 		{
-			textcolor(0);
+			textcolor(BLACK);
 			printf("%-11s", character[index].name);
-			textcolor(7);
+			textcolor(LIGHTGRAY);
 		}
 		else
+		{
 			printf("%-11s", character[index].name);
+		}
 
-		if(index == 5)
+		if (index == 5)
+		{
 			printf("\n");
+		}
 
 		index++;
 	}
@@ -28,70 +36,78 @@ int Select(sCharacter* character)	//상대할 몬스터 선택
 
 	gotoxy(x, y);
 
-	while(NoDuplication == 1)	//안쓰러트린 몬스터 선택할 때까지
+	while (NoDuplication == 1)	//안쓰러트린 몬스터 선택할 때까지
 	{
-		switch(_getch())
+		switch (_getch())
 		{
 		case 72:	//위
-			if(y == 2)
+			if (y == 2)
+			{
 				y--;
+			}
 			break;
 		case 80:	//아래
-			if(y == 1)
+			if (y == 1)
+			{
 				y++;
+			}
 			break;
 		case 75:	//왼쪽
-			if(x >= 12 && x <= 45)
+			if (x >= 12 && x <= 45)
+			{
 				x -= 11;
+			}
 			break;
 		case 77:	//오른쪽
-			if(x >= 1 && x <= 34)
+			if (x >= 1 && x <= 34)
+			{
 				x += 11;
+			}
 			break;
 		case 13:	//엔터
 			switch(x+y)
 			{
 			case 2:
-				CheckDuplication(1, character, &NoDuplication, &SelectedMonster, &x, &y);
+				CheckDuplication(1, character, &NoDuplication, &selectedMonster, &x, &y);
 				break;
 			case 13:
-				CheckDuplication(2, character, &NoDuplication, &SelectedMonster, &x, &y);
+				CheckDuplication(2, character, &NoDuplication, &selectedMonster, &x, &y);
 				break;
 			case 24:
-				CheckDuplication(3, character, &NoDuplication, &SelectedMonster, &x, &y);
+				CheckDuplication(3, character, &NoDuplication, &selectedMonster, &x, &y);
 				break;
 			case 35:
-				CheckDuplication(4, character, &NoDuplication, &SelectedMonster, &x, &y);
+				CheckDuplication(4, character, &NoDuplication, &selectedMonster, &x, &y);
 				break;
 			case 46:
-				CheckDuplication(5, character, &NoDuplication, &SelectedMonster, &x, &y);
+				CheckDuplication(5, character, &NoDuplication, &selectedMonster, &x, &y);
 				break;
 			case 3:
-				CheckDuplication(6, character, &NoDuplication, &SelectedMonster, &x, &y);
+				CheckDuplication(6, character, &NoDuplication, &selectedMonster, &x, &y);
 				break;
 			case 14:
-				CheckDuplication(7, character, &NoDuplication, &SelectedMonster, &x, &y);
+				CheckDuplication(7, character, &NoDuplication, &selectedMonster, &x, &y);
 				break;
 			case 25:
-				CheckDuplication(8, character, &NoDuplication, &SelectedMonster, &x, &y);
+				CheckDuplication(8, character, &NoDuplication, &selectedMonster, &x, &y);
 				break;
 			case 36:
-				CheckDuplication(9, character, &NoDuplication, &SelectedMonster, &x, &y);
+				CheckDuplication(9, character, &NoDuplication, &selectedMonster, &x, &y);
 				break;
 			case 47:
-				CheckDuplication(10, character, &NoDuplication, &SelectedMonster, &x, &y);
+				CheckDuplication(10, character, &NoDuplication, &selectedMonster, &x, &y);
+				break;
+			default:
 				break;
 			}
 		default:
 			break;
 		}
-
-		//gotoxy(1, 4);
-		//printf("x: %d	y: %d	NoDuplication: %d	SelectedMonster: %d", x, y, NoDuplication, SelectedMonster);
+		
 		gotoxy(x, y);
 	}
 
 	system("cls");
 
-	return SelectedMonster;
+	return selectedMonster;
 }

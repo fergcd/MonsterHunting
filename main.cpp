@@ -2,12 +2,7 @@
 
 #include"Header.h"
 
-
-enum CharacterName character_name;	//열거체 변수 선언
-
-
 char KillingCount = 0;	//쓰러트린 몬스터 마릿수
-
 
 int main(void)	//진입점 함수인 main함수를 운영체제가 호출
 {
@@ -147,21 +142,27 @@ int main(void)	//진입점 함수인 main함수를 운영체제가 호출
       }
       };
 
-   int StartOrExit = 0;
+   bool bExitGame = false;
 	
-   while(StartOrExit == 0)
+   while (false == bExitGame)
    {
-      StartOrExit = Title();	//타이틀화면을 띄워줍니다. 게임 시작/종료 선택이 가능합니다.
+	   bExitGame = Title();	//타이틀화면을 띄워줍니다. 게임 시작/종료 선택이 가능합니다.
    
-      if(StartOrExit == 1)	//Title()에서 "게임 종료"를 선택했을 시 리턴값으로 1을 받으며, 게임이 종료됩니다.
-         break;
+      if (true == bExitGame)	//Title()에서 "게임 종료"를 선택했을 시 리턴값으로 1을 받으며, 게임이 종료됩니다.
+	  {
+		  break;
+	  }
    
       InputName(character);	//플레이어의 이름을 입력받습니다. 이름 입력 후 엔터를 치면 됩니다.
    
-      while(KillingCount < 10 && character[0].HealthPoint > 0)	//몬스터 10마리를 다 쓰러트리거나 플레이어가 패배할 때까지
-         Battle(Select(character), character);	//상대할 몬스터 선택, 전투
+      while (KillingCount < 10 && character[0].HealthPoint > 0)	//몬스터 10마리를 다 쓰러트리거나 플레이어가 패배할 때까지
+	  {
+		  Battle(Select(character), character);	//상대할 몬스터 선택, 전투
+	  }         
    
       TheEnd(character, KillingCount);	//몬스터 10마리를 다 쓰러트렸거나 플레이어가 패배했을 때 엔딩화면을 출력합니다.
       reset(character);	//게임을 다시 시작할 시 모든 캐릭터의 상태를 초기화 합니다.
    }
+
+   return 0;
 }

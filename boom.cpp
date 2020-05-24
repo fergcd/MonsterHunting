@@ -23,34 +23,47 @@ void boom()	//╞у
 					        "  бс бс бс бсбс бс бс бс      ",
 							"бс бс бс бс бс бс бс бс бс    "}};
 
-	int row, frame;
+	int row;
+	int frame;
 
 	SetCursorType(NOCURSOR);
 
-	for(frame = 0; frame <= 8; frame++)
+	for (frame = 0; frame <= 8; frame++)
 	{
-		for(row = 0; row <= 3; row++)
+		for (row = 0; row <= 3; row++)
 		{
 			gotoxy(1, 17 + row);
-			if(frame >= 4)
+			if (frame >= 4)
+			{
 				printf("%s", body[8 - frame][row]);
+			}
 			else
+			{
 				printf("%s", body[frame][row]);
+			}
 		}
-		if(frame == 4)
+		if (frame == 4)
+		{
 			Sleep(100);
+		}
 		else
+		{
 			Sleep(15);
+		}
 	}
 
 	Sleep(500);
 
-	for(frame = 1; frame <= 30; frame++)
+	for (frame = 1; frame <= 30; frame++)
 	{
-		if(frame % 2 == 0)
-			textcolor(0);
+		if (frame % 2 == 0)
+		{
+			textcolor(BLACK);
+		}
 		else
-			textcolor(12);
+		{
+			textcolor(LIGHTRED);
+		}
 		gotoxy(33, 12);
 		printf("ве");
 		gotoxy(27, 13);
@@ -68,7 +81,7 @@ void boom()	//╞у
 		Sleep(20);
 	}
 
-	textcolor(7);
+	textcolor(LIGHTGRAY);
 
 	SetCursorType(SHOWCURSOR);
 }

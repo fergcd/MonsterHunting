@@ -1,8 +1,11 @@
 #include"Header.h"
 
-void ItemAcquire(int index, sCharacter* character)	//아이템 습득 애니메이션
+void ItemAcquire(int itemType, sCharacter* character)	//아이템 습득 애니메이션
 {
-	int x = 22, y = 19, blink = 0, turn = 0;
+	int x = 22;
+	int y = 19;
+	int blink = 0;
+	int turn = 0;
 
 	char flower[5][22] = {"  ●",
 						  "●◎●",
@@ -36,25 +39,29 @@ void ItemAcquire(int index, sCharacter* character)	//아이템 습득 애니메이션
 
 	Sleep(300);
 
-	for(blink = 0; blink <= 15; blink++)
+	for (blink = 0; blink <= 15; blink++)
 	{
-		if(index <= 10)
+		if (itemType <= 10)
 		{
-			if(turn == 0)
+			if (turn == 0)
 			{
-				textcolor(0);
+				textcolor(BLACK);
 				turn++;
 			}
 			else
 			{
-				if(index == 10)
-					textcolor(14);
+				if (10 == itemType)
+				{
+					textcolor(YELLOW);
+				}
 				else
-					textcolor(7);
+				{
+					textcolor(LIGHTGRAY);
+				}
 				turn--;
 			}
 		}
-		switch(index)
+		switch (itemType)
 		{
 		case 1:	//짱돌
 			gotoxy(29, 12);
@@ -74,22 +81,26 @@ void ItemAcquire(int index, sCharacter* character)	//아이템 습득 애니메이션
 		case 10:	//옥수수
 			ItemAcquireFunction(28, 7, 5, corn);
 			break;
+		default:
+			break;
 		}
 		Sleep(30);
 	}
-	textcolor(7);
+	textcolor(LIGHTGRAY);
 
-	switch(index)
+	switch (itemType)
 	{
 	case 12:
-		EatItem(index, character, flower);
+		EatItem(itemType, character, flower);
 		break;
 	case 13:
-		EatItem(index, character, fruit);
+		EatItem(itemType, character, fruit);
 		break;
 	case 17:
-		EatItem(index, character, grenade);
+		EatItem(itemType, character, grenade);
 		Sleep(600);
+		break;
+	default:		
 		break;
 	}
 

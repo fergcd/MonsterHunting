@@ -9,20 +9,20 @@ void InputName(sCharacter* character)	//플레이어의 이름을 입력받습니다. 이름 입�
 	{
 		gotoxy(20, 8);
 		printf("당신의 이름을 입력하고 엔터를 누르세요.\n\n");
-		textcolor(12);
+		textcolor(LIGHTRED);
 		gotoxy(1, 15);
 		printf("        ※한글이름을 입력했다면 엔터치기 전에 [한/영] 키를 누르세요.\n");
 		printf("        ※이름은 10byte 이내로 입력하세요.");
-		textcolor(7);
+		textcolor(LIGHTGRAY);
 		gotoxy(20, 10);
 		printf("          ⇒ ");
 
 		if (nameLength > 10 || 0 == result)	//이름 길이를 10byte로 제한
 		{
-			textcolor(12);
+			textcolor(LIGHTRED);
 			gotoxy(33, 11);
 			printf("이름이 너무 길어요!");
-			textcolor(7);
+			textcolor(LIGHTGRAY);
 
 			if (0 == result)
 			{
@@ -45,7 +45,7 @@ void InputName(sCharacter* character)	//플레이어의 이름을 입력받습니다. 이름 입�
 	} while (nameLength > 10 || 0 == result);
 	
 	gotoxy(33, 10);
-	Blink(character[0].name, 33, 10, 14);
+	Blink(character[0].name, 33, 10, YELLOW);
 
 	system("cls");
 }

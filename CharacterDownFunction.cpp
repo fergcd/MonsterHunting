@@ -1,6 +1,6 @@
 #include"Header.h"
 
-void CharacterDownFunction(int index, sCharacter* character, int x, int y)	//CharacterDown에서 쓰이는 함수
+void CharacterDownFunction(eCharacterName characterName, sCharacter* character, int x, int y)	//CharacterDown에서 쓰이는 함수
 {
 	int row = 1, LineFeed = 0;
 
@@ -11,7 +11,7 @@ void CharacterDownFunction(int index, sCharacter* character, int x, int y)	//Cha
 			if(row + LineFeed <= 11)
 			{
 				gotoxy(x, y + row + LineFeed);
-				printf("%s", character[index].CharacterIMG[row - 1]);
+				printf("%s", character[(int)characterName].CharacterIMG[row - 1]);
 			}
 		}
 		Sleep(15);

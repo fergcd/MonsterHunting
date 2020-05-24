@@ -1,11 +1,11 @@
 #include"Header.h"
 
-int Title()	//타이틀화면을 띄워줍니다. 게임 시작/종료 선택이 가능합니다.
+bool Title()	//타이틀화면을 띄워줍니다. 게임 시작/종료 선택이 가능합니다.
 {
 	int y = 23;
 	char select = 0;
 
-	textcolor(2);
+	textcolor(GREEN);
 	printf("\n");
 	printf("                  ~<                                             \n");              
     printf("                  zBNNNBs                                        \n");          
@@ -26,16 +26,16 @@ int Title()	//타이틀화면을 띄워줍니다. 게임 시작/종료 선택이 가능합니다.
 	printf("                  shB= =z           <DBs +s                'B'	\n");
 	printf("                  zBN  B~           =NB- B<                 <'	\n");
 	printf("                  +=BNNz'           ~+zNNs 						\n");
-	textcolor(7);
+	textcolor(LIGHTGRAY);
 	gotoxy(36, 23);
 	printf("게임 시작");
 	gotoxy(36, 24);
 	printf("게임 종료");
 	gotoxy(36, 23);
 
-	while(select != 13)
+	while (select != 13)
 	{
-		select = _getch();	//_getch는 _getchar와 달리 문자를 입력하자마자 다음 문장으로 넘어가기 때문에 문자 입력 후 Enter키를 눌러줄 필요가 없습니다.
+		select = _getch();	//_getch는 getchar와 달리 문자를 입력하자마자 다음 문장으로 넘어가기 때문에 문자 입력 후 Enter키를 눌러줄 필요가 없습니다.
 		switch(select)
 		{
 		case 72:	//위
@@ -45,18 +45,18 @@ int Title()	//타이틀화면을 띄워줍니다. 게임 시작/종료 선택이 가능합니다.
 			y = 24;
 			break;
 		case 13:	//엔터
-			if(y == 23)
+			if (23 == y)
 			{
 				Blink("게임 시작", 36, y, 14);
 				system("cls");	//콘솔화면에 출력된 문장들을 지웁니다.
+				return false;
 			}
+			break;
+		default:
 			break;
 		}
 		gotoxy(36, y);
 	}
 
-	if(y == 23)
-		return 0;
-	else
-		return 1;
+	return true;
 }

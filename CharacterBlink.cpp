@@ -1,52 +1,36 @@
 #include"Header.h"
 
-void CharacterBlink(int index, sCharacter* character, int WhatBlink)	//Battle에서 캐릭터 깜빡임 애니메이션
-{	//WhatBlink - 4:어두운빨강(HP감소)  10:초록(HP증가)  9:파랑(AP증가)	14:노랑(기술습득)
-	character_name = (CharacterName)index;	//character_name의 자료형은 CharacterName, 즉 열거형인데 소스파일 확장자를 c에서 cpp로 바꾸니까 index의 자료형인 int와 열거형이 서로 다른 자료형으로 인식되서 캐스트 연산자 사용
-	
+void CharacterBlink(eCharacterName characterName, sCharacter* character, WORD color)	//Battle에서 캐릭터 깜빡임 애니메이션
+{
 	SetCursorType(NOCURSOR);
 	
 	Sleep(300);
-	switch(character_name)
+	switch(characterName)
 	{
-	case Player:
-		CharacterBlinkFunction(0, character, 3, 9, WhatBlink);
+	case eCharacterName::Player:
+		CharacterBlinkFunction(characterName, character, 3, 9, color);
 		break;
-	case Stone:
-		CharacterBlinkFunction(index, character, 48, 3, WhatBlink);
+	case eCharacterName::Stone:
+	case eCharacterName::Flower:
+	case eCharacterName::Tree:
+	case eCharacterName::Ant:
+	case eCharacterName::GrassHopper:
+	case eCharacterName::InfinitesimalCalculusTextBook:
+	case eCharacterName::Grenade:
+	case eCharacterName::Billy:
+	case eCharacterName::CamelCriket:
+	case eCharacterName::Gandhi:
+		CharacterBlinkFunction(characterName, character, 48, 3, color);
 		break;
-	case Flower:
-		CharacterBlinkFunction(index, character, 48, 3, WhatBlink);
-		break;
-	case Tree:
-		CharacterBlinkFunction(index, character, 48, 3, WhatBlink);
-		break;
-	case Ant:
-		CharacterBlinkFunction(index, character, 48, 3, WhatBlink);
-		break;
-	case GrassHopper:
-		CharacterBlinkFunction(index, character, 48, 3, WhatBlink);
-		break;
-	case Infinitesimal_Calculus_TextBook:
-		CharacterBlinkFunction(index, character, 48, 3, WhatBlink);
-		break;
-	case Grenade:
-		CharacterBlinkFunction(index, character, 48, 3, WhatBlink);
-		break;
-	case Billy:
-		CharacterBlinkFunction(index, character, 48, 3, WhatBlink);
-		break;
-	case Camel_Criket:
-		CharacterBlinkFunction(index, character, 48, 3, WhatBlink);
-		break;
-	case Gandhi: 
-		CharacterBlinkFunction(index, character, 48, 3, WhatBlink);
+	default:
 		break;
 	}
 	Sleep(300);
 
-	if(character_name == Player && WhatBlink != 4)
-		CharacterExpression(0, character, 0);
+	if (characterName == eCharacterName::Player && color != RED)
+	{
+		CharacterExpression(eCharacterName::Player, character, eCharacterExpression::PlayerNormal);
+	}
 
 	SetCursorType(SHOWCURSOR);
 }
