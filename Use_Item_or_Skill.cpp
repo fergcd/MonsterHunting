@@ -2,7 +2,7 @@
 
 void Use_Item_or_Skill(int x, int y, eCharacterName characterName, sCharacter* character)	//아이템 또는 기술 사용 애니메이션 함수
 {
-	char Fuck_You_[9][11][41] = {{"                              ",	//도발, 원레 [9][11][31]이었으나 소스파일 확장자를 c에서 cpp로 바꾸니까 캐릭터 그리는 데 쓰인 2byte짜리 특수문자 크기가 3byte로 커져서 수정
+	char middleFinger[9][11][41] = {{"                              ",	//도발, 원레 [9][11][31]이었으나 소스파일 확장자를 c에서 cpp로 바꾸니까 캐릭터 그리는 데 쓰인 2byte짜리 특수문자 크기가 3byte로 커져서 수정
 					  		      "        ■■■■■            ",
 							      "      ■■■■■■            ",
 							      "      ■■■■Λ■■          ",
@@ -318,7 +318,7 @@ void Use_Item_or_Skill(int x, int y, eCharacterName characterName, sCharacter* c
 			for (row = 0; row <= 10; row++)
 			{
 				gotoxy(3, 10 + row);
-				printf("%s", Fuck_You_[frame][row]);
+				printf("%s", middleFinger[frame][row]);
 			}
 			if (frame == 6)
 			{
