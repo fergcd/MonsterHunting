@@ -21,4 +21,4 @@ IDE : Microsoft Visual Studio 2019
 
 
 
-※ C → C++(OOP) 로 리팩토링 예정
+※ C → C++(OOP) 로 리팩토링한 버전을 저장소 'MonsterHunting_OOP'에 올림(https://github.com/fergcd/MonsterHunting_OOP.git)
