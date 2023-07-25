@@ -7,7 +7,7 @@ void ItemDeactivate(int x, int index, sCharacter* character)	//²É, ³ª¹«, ¼ö·ùÅº¿
 	{
 		printf("ÇÊ»ì±â");
 	}
-	else if(character[index].HealthPoint > 0)
+	else if (character[index].HealthPoint > 0)
 	{
 		textcolor(BLACK);
 		printf("%s", character[index].name);

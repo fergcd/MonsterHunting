@@ -13,9 +13,9 @@ void StateDisplay(int index, sCharacter* character, int previousHP, int previous
 		printf("<%s>", character[index].name);	//캐릭터 이름
 		gotoxy(x, y + 1);
 		printf("체력 ");	//캐릭터 체력바	(플레이어 |×35  몬스터 |×70)
-		gotoxy(x, y+2);
+		gotoxy(x, y + 2);
 		printf("           0 /");	//캐릭터 체력 수치
-		gotoxy(x, y+3);
+		gotoxy(x, y + 3);
 		printf("공격력:  0");	//캐릭터 공격력 수치
 		Sleep(500);
 		for (; HPdisplay <= character[index].HealthPoint || APdisplay <= character[index].AttackPoint; HPdisplay++, APdisplay++)
@@ -27,7 +27,7 @@ void StateDisplay(int index, sCharacter* character, int previousHP, int previous
 				gotoxy(x + 10, y + 2);
 				printf("%2d", HPdisplay);	//캐릭터 체력 수치 출력
 			}
-			
+
 			if (APdisplay <= character[index].AttackPoint)
 			{
 				gotoxy(x + 8, y + 3);
@@ -47,9 +47,9 @@ void StateDisplay(int index, sCharacter* character, int previousHP, int previous
 		printf("<%s>", character[index].name);	//캐릭터 이름
 		gotoxy(x, y + 1);
 		printf("체력 ");	//캐릭터 체력바	(플레이어 |×35  몬스터 |×70)
-		gotoxy(x, y+2);
+		gotoxy(x, y + 2);
 		printf("           0 /");	//캐릭터 체력 수치
-		gotoxy(x, y+3);
+		gotoxy(x, y + 3);
 		printf("공격력:  0");	//캐릭터 공격력 수치
 
 		for (; HPdisplay <= character[index].HealthPoint || APdisplay <= character[index].AttackPoint; HPdisplay++, APdisplay++)
@@ -64,7 +64,7 @@ void StateDisplay(int index, sCharacter* character, int previousHP, int previous
 				gotoxy(x + 10, y + 2);
 				printf("%2d", HPdisplay);	//캐릭터 체력 수치 출력
 			}
-			
+
 			if (APdisplay <= character[index].AttackPoint)
 			{
 				gotoxy(x + 8, y + 3);

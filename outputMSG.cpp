@@ -20,7 +20,7 @@ void outputMSG(char* MSG)	//Battle에서 메세지 출력 함수
 			}
 		}
 		printf("%s", First);
-		
+
 		Sleep(50);
 
 		if (_kbhit())

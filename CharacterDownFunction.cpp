@@ -4,11 +4,11 @@ void CharacterDownFunction(eCharacterName characterName, sCharacter* character, 
 {
 	int row = 1, LineFeed = 0;
 
-	for(; LineFeed <= 11; LineFeed++)
+	for (; LineFeed <= 11; LineFeed++)
 	{
-		for(row = 1; row <= 11; row++)	//사이즈 30x11
+		for (row = 1; row <= 11; row++)	//사이즈 30x11
 		{
-			if(row + LineFeed <= 11)
+			if (row + LineFeed <= 11)
 			{
 				gotoxy(x, y + row + LineFeed);
 				printf("%s", character[(int)characterName].CharacterIMG[row - 1]);

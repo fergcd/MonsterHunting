@@ -100,7 +100,7 @@ void ItemAcquire(int itemType, sCharacter* character)	//아이템 습득 애니메이션
 		EatItem(itemType, character, grenade);
 		Sleep(600);
 		break;
-	default:		
+	default:
 		break;
 	}
 

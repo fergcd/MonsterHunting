@@ -7,11 +7,11 @@ void Reward(eCharacterName characterName, sCharacter* character)	//각 몬스터를 �
 
 	char nothing[2][22] = {"  ",
 						   "  "};
-	
+
 	int dummy = _getch();
 	CharacterExpression(eCharacterName::Player, character, eCharacterExpression::PlayerNormal);
 	eraseMSG();
-	
+
 	switch (characterName)	//쓰러트린 몬스터에 따라 플레이어의 상태가 달리 변화합니다.
 	{
 	case eCharacterName::Stone:

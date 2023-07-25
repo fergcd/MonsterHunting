@@ -112,7 +112,7 @@ void corn()	//¿Á¼ö¼ö
 			y++;
 		}
 	}
-	
+
 	Sleep(300);
 
 	textcolor(LIGHTGRAY);

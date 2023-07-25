@@ -5,9 +5,9 @@ void MouthOpenClose(int motion, char BigMouth[][22])	//ÇÃ·¹ÀÌ¾î ÂÁÂÁ
 	int y;
 	int row;
 	char EraseHead[4][15] = {"            ",
-				 		     "            ",
-				 		     "              ",
-						     "              "};
+							 "            ",
+							 "              ",
+							 "              "};
 
 	SetCursorType(NOCURSOR);
 
@@ -28,7 +28,7 @@ void MouthOpenClose(int motion, char BigMouth[][22])	//ÇÃ·¹ÀÌ¾î ÂÁÂÁ
 			}
 			else if (y == 9 || y == 8)
 			{
-				for(row = 15; row >= 12; row--)
+				for (row = 15; row >= 12; row--)
 				{
 					gotoxy(9, row);
 					printf("¡á¡á¡á¡á¡á    ");

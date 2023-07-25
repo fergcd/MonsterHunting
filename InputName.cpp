@@ -43,7 +43,7 @@ void InputName(sCharacter* character)	//플레이어의 이름을 입력받습니다. 이름 입�
 		}
 
 	} while (nameLength > 10 || 0 == result);
-	
+
 	gotoxy(33, 10);
 	Blink(character[0].name, 33, 10, YELLOW);
 

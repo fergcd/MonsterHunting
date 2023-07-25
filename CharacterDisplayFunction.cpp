@@ -4,7 +4,7 @@ void CharacterDisplayFunction(eCharacterName characterName, sCharacter* characte
 {
 	int row = 1;
 
-	while(row <= 11)
+	while (row <= 11)
 	{
 		gotoxy(x, y + row);
 		printf("%s", character[(int)characterName].CharacterIMG[row++ - 1]);

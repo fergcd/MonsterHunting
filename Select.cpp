@@ -10,7 +10,7 @@ eCharacterName Select(sCharacter* character)	//상대할 몬스터 선택
 
 	while (index <= 10)	//상대할 몬스터 목록 출력
 	{
-		if(character[index].HealthPoint <= 0)	//쓰러트린 몬스터는 목록에서 안보이게 합니다.
+		if (character[index].HealthPoint <= 0)	//쓰러트린 몬스터는 목록에서 안보이게 합니다.
 		{
 			textcolor(BLACK);
 			printf("%-11s", character[index].name);
@@ -65,7 +65,7 @@ eCharacterName Select(sCharacter* character)	//상대할 몬스터 선택
 			}
 			break;
 		case 13:	//엔터
-			switch(x+y)
+			switch (x + y)
 			{
 			case 2:
 				CheckDuplication(1, character, &NoDuplication, &selectedMonster, &x, &y);
@@ -103,7 +103,7 @@ eCharacterName Select(sCharacter* character)	//상대할 몬스터 선택
 		default:
 			break;
 		}
-		
+
 		gotoxy(x, y);
 	}
 

@@ -48,7 +48,7 @@ void CharacterExpression(eCharacterName characterName, sCharacter* character, eC
 		break;
 	case eCharacterExpression::GrassHopperNormal:
 		strcpy_s(character[(int)characterName].CharacterIMG[5], "   ′≡ ′用用⊙用‵用－�絻   ");
-		break;	
+		break;
 	case eCharacterExpression::GrassHopperDamaged:
 		strcpy_s(character[(int)characterName].CharacterIMG[5], "   ′ˉ ′用用⊙用‵用－�絻   ");
 		break;
@@ -57,7 +57,7 @@ void CharacterExpression(eCharacterName characterName, sCharacter* character, eC
 		break;
 	case eCharacterExpression::CamelCriketNormal:
 		strcpy_s(character[(int)characterName].CharacterIMG[7], "  ㄞ早≒′早早早 /早早  太    ");
-		break;	
+		break;
 	case eCharacterExpression::CamelCriketDamaged:
 		strcpy_s(character[(int)characterName].CharacterIMG[7], "  ㄞ早ˉ′早早早 /早早  太    ");
 		break;

@@ -36,13 +36,13 @@ void CharacterBlinkFunction(eCharacterName characterName, sCharacter* character,
 				break;
 			default:
 				break;
-			}			
+			}
 		}
 		else
 		{
 			if (FOREGROUND_RED == color)
 			{
-				switch(characterName)
+				switch (characterName)
 				{
 				case eCharacterName::GrassHopper:
 					CharacterExpression(characterName, character, eCharacterExpression::GrassHopperDamaged);
@@ -60,9 +60,9 @@ void CharacterBlinkFunction(eCharacterName characterName, sCharacter* character,
 				CharacterDisplay(characterName, character);
 			}
 		}
-		
+
 		Sleep(30);
-		
+
 		blinkCount++;
 	}
 }

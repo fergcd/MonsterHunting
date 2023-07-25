@@ -1,11 +1,11 @@
 #include"Header.h"
 
 void CharacterDown(eCharacterName characterName, sCharacter* character)	//Battle에서 캐릭터 쓰러지는 애니메이션
-{		
+{
 	SetCursorType(NOCURSOR);
-	
+
 	Sleep(300);
-	switch(characterName)
+	switch (characterName)
 	{
 	case eCharacterName::Player:
 		CharacterDownFunction(characterName, character, 3, 9);

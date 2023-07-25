@@ -15,7 +15,7 @@
 #define YELLOW			(14)	// 기술습득, 옥수수
 #define WHITE			(15)	// 옥수수
 
-typedef enum {NOCURSOR, SHOWCURSOR} CURSOR_TYPE;	//SetCursorType함수의 매개변수 자료형으로 사용될 사용자 정의 자료형
+typedef enum { NOCURSOR, SHOWCURSOR } CURSOR_TYPE;	//SetCursorType함수의 매개변수 자료형으로 사용될 사용자 정의 자료형
 
 
 enum class eCharacterName

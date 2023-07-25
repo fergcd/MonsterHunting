@@ -77,7 +77,7 @@ void Battle(eCharacterName characterName, sCharacter* character)	//전투
 						decide = 1;
 						turn++;	//turn = 2 가 되므로 다음 for문에서는 if문의 문장은 넘어가고 else문의 문장으로 넘어갈 수 있습니다.
 						eraseMSG();
-						if(eCharacterName::Gandhi == characterName && 0 == character[(int)characterName].AttackPoint)
+						if (eCharacterName::Gandhi == characterName && 0 == character[(int)characterName].AttackPoint)
 						{
 							break;
 						}
@@ -89,7 +89,7 @@ void Battle(eCharacterName characterName, sCharacter* character)	//전투
 						StateDisplay((int)characterName, character, previousMonsterHP, character[(int)characterName].AttackPoint, 5, 2);
 						break;
 					case 20:	//나무뿌리 -> 짱돌로 변경
-						if(character[1].HealthPoint <= 0)
+						if (character[1].HealthPoint <= 0)
 						{
 							decide = 1;
 							turn++;
@@ -100,7 +100,7 @@ void Battle(eCharacterName characterName, sCharacter* character)	//전투
 							}
 							printf("%s이(가) %s에게 짱돌을 던졌습니다.", character[0].name, character[(int)characterName].name);
 							Use_Item_or_Skill(character[(int)characterName].x, character[(int)characterName].y, characterName, character);
-							if(eCharacterName::Billy == characterName)	//존슨˚Д˚ 60, 10	얼굴 62~64, 6
+							if (eCharacterName::Billy == characterName)	//존슨˚Д˚ 60, 10	얼굴 62~64, 6
 							{
 								Blink("˚Д˚", 60, 10, RED);
 								eraseMSG();
@@ -140,7 +140,7 @@ void Battle(eCharacterName characterName, sCharacter* character)	//전투
 						}
 						break;
 					case 40:	//수류탄
-						if(character[7].HealthPoint <= 0)
+						if (character[7].HealthPoint <= 0)
 						{
 							decide = 1;
 							turn++;
@@ -156,14 +156,14 @@ void Battle(eCharacterName characterName, sCharacter* character)	//전투
 							CharacterExpression(eCharacterName::Player, character, eCharacterExpression::PlayerWhatThe);
 							boom();
 							eraseMSG();
-							printf("%s은(는) 매우 아파서 체력이 20 떨어졌습니다.", character[0].name);							
+							printf("%s은(는) 매우 아파서 체력이 20 떨어졌습니다.", character[0].name);
 							character[0].HealthPoint -= 20;
 							Adjust_NegativeHealthPoint_To_Zero(0, character);
 							StateDisplay(0, character, previousPlayerHP, character[0].AttackPoint, 40, 15);
 						}
 						break;
 					case 50:	//도발
-						if(character[8].HealthPoint <= 0)
+						if (character[8].HealthPoint <= 0)
 						{
 							decide = 1;
 							turn++;
@@ -185,7 +185,7 @@ void Battle(eCharacterName characterName, sCharacter* character)	//전투
 								character[(int)characterName].MaxHealthPoint = 66;
 								character[(int)characterName].AttackPoint = character[0].HealthPoint - 1;
 							}
-							else if(characterName == eCharacterName::Gandhi)
+							else if (characterName == eCharacterName::Gandhi)
 							{
 								printf("%s: 죽어야 정신을 차리겠군.", character[(int)characterName].name);
 								getch_eraseMSG();
@@ -203,11 +203,11 @@ void Battle(eCharacterName characterName, sCharacter* character)	//전투
 								CharacterBlink(characterName, character, LIGHTBLUE);
 								character[(int)characterName].AttackPoint += 5;
 							}
-							StateDisplay((int)characterName, character, previousMonsterHP , previousMonsterAP, 5, 2);
+							StateDisplay((int)characterName, character, previousMonsterHP, previousMonsterAP, 5, 2);
 						}
 						break;
 					case 60:	//필살기
-						if(KillingCount >= 9 && character[0].HealthPoint == 1)
+						if (KillingCount >= 9 && character[0].HealthPoint == 1)
 						{
 							decide = 1;
 							turn++;
@@ -228,7 +228,7 @@ void Battle(eCharacterName characterName, sCharacter* character)	//전투
 					break;
 				default:
 					break;
-				}				
+				}
 				gotoxy(x, 23);
 			}
 			decide = 0;
@@ -278,17 +278,17 @@ void Battle(eCharacterName characterName, sCharacter* character)	//전투
 			getch_eraseMSG();
 		}
 
-		if(character[(int)characterName].HealthPoint <= 0)	//몬스터 패배
+		if (character[(int)characterName].HealthPoint <= 0)	//몬스터 패배
 		{
 			KillingCount++;
 			printf("%s을(를) 이겼습니다.", character[(int)characterName].name);
-			switch(characterName)
+			switch (characterName)
 			{
 			case eCharacterName::GrassHopper:
 				CharacterExpression(characterName, character, eCharacterExpression::GrassHopperDead);
 				break;
 			case eCharacterName::Billy:
-				if(x == 20)
+				if (x == 20)
 				{
 					CharacterExpression(characterName, character, eCharacterExpression::BillyGozaDead);
 				}
@@ -309,7 +309,7 @@ void Battle(eCharacterName characterName, sCharacter* character)	//전투
 			CharacterDown(characterName, character);
 			Reward(characterName, character);
 		}
-		if(character[0].HealthPoint <= 0)	//플레이어 패배
+		if (character[0].HealthPoint <= 0)	//플레이어 패배
 		{
 			printf("당신은 패배했습니다.");
 			if (characterName == eCharacterName::Gandhi && character[(int)characterName].AttackPoint == 444)
@@ -321,7 +321,7 @@ void Battle(eCharacterName characterName, sCharacter* character)	//전투
 				CharacterExpression(eCharacterName::Player, character, eCharacterExpression::PlayerDead);
 			}
 			CharacterDown(eCharacterName::Player, character);
-			if(x == 40)
+			if (x == 40)
 			{
 				getch_eraseMSG();
 				printf("%s: ㅋㅋㅋ", character[(int)characterName].name);

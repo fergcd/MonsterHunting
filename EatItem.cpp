@@ -3,20 +3,20 @@
 void EatItem(int item, sCharacter* character, char Item[][22])	//æ∆¿Ã≈€ º∑√Î
 {
 	char BigMouth[7][22] = {"  °·°·°·°·°·",
-						    "°·°·°·°·°·°·",
-						    "°·°·°·°·•À°·°·",
-						    "°·°·°·°·°·°·°·",
-						    "°·°·°·°·°·°·",
-						    "  °·°·°·°·°·°·",
+							"°·°·°·°·°·°·",
+							"°·°·°·°·•À°·°·",
+							"°·°·°·°·°·°·°·",
+							"°·°·°·°·°·°·",
+							"  °·°·°·°·°·°·",
 							"°·°·°·°·°·"};
 
 	char eraseItem[7][22] = {"     ",
-		                     "     ",
-						     "      ",
-						     "       ",
-						     "        ",
-						     "        ",
-						     "       "};
+							 "     ",
+							 "      ",
+							 "       ",
+							 "        ",
+							 "        ",
+							 "       "};
 
 	int x = 0;
 	int y = 0;
@@ -27,13 +27,13 @@ void EatItem(int item, sCharacter* character, char Item[][22])	//æ∆¿Ã≈€ º∑√Î
 	int munch = 0;
 	int frame = 0;
 
-	if(item != 4)
+	if (item != 4)
 	{
 		MouthOpenClose(1, BigMouth);
 
 		Sleep(300);
 
-		switch(item)
+		switch (item)
 		{
 		case 12:
 			x = 27;
@@ -54,17 +54,21 @@ void EatItem(int item, sCharacter* character, char Item[][22])	//æ∆¿Ã≈€ º∑√Î
 			break;
 		}
 
-		for(addx = 0, addy = 0; addx <= 12; addx++)	//æ∆¿Ã≈€ ª¿‘
+		for (addx = 0, addy = 0; addx <= 12; addx++)	//æ∆¿Ã≈€ ª¿‘
 		{
-			if(addx != 0 && addx % 3 == 0)
+			if (addx != 0 && addx % 3 == 0)
+			{
 				addy++;
+			}
 			//gotoxy(1, 1);
 			//printf("%d %d", x - addx, y + addy);
-			if(addx == 12 && item == 13)
+			if (addx == 12 && item == 13)
+			{
 				strcpy_s(Item[2], "£®0ÏÃ0£©");
+			}
 			ItemAcquireFunction(x - addx, y + addy, MaxRow, Item);
 			ItemAcquireFunction(9, 6, 3, BigMouth);
-			for(row = 15; row >= 10; row--)
+			for (row = 15; row >= 10; row--)
 			{
 				gotoxy(9, row);
 				printf("°·°·°·°·");
@@ -76,7 +80,7 @@ void EatItem(int item, sCharacter* character, char Item[][22])	//æ∆¿Ã≈€ º∑√Î
 
 			Sleep(15);
 
-			if(addx < 12)
+			if (addx < 12)
 			{
 				ItemAcquireFunction(26 - addx, 6 + addy, 6, eraseItem);
 				arm(addx, "  ");
@@ -89,23 +93,23 @@ void EatItem(int item, sCharacter* character, char Item[][22])	//æ∆¿Ã≈€ º∑√Î
 		MouthOpenClose(2, BigMouth);
 	}
 
-	for(munch = 1; munch <= 5; munch++)
+	for (munch = 1; munch <= 5; munch++)
 	{
 		MouthOpenClose(3, BigMouth);
 		Sleep(80);
 		MouthOpenClose(4, BigMouth);
 	}
 
-	if(item != 4)
+	if (item != 4)
 	{
-		for(frame = 15; frame <= 19; frame++)
+		for (frame = 15; frame <= 19; frame++)
 		{
 			arm(frame, "  ");
 			Sleep(30);
 		}
 	}
 
-	for(row = 0; row <= 10; row++)
+	for (row = 0; row <= 10; row++)
 	{
 		gotoxy(3, 10 + row);
 		printf("%s", character[0].CharacterIMG[row]);

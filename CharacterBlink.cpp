@@ -3,9 +3,9 @@
 void CharacterBlink(eCharacterName characterName, sCharacter* character, WORD color)	//Battle에서 캐릭터 깜빡임 애니메이션
 {
 	SetCursorType(NOCURSOR);
-	
+
 	Sleep(300);
-	switch(characterName)
+	switch (characterName)
 	{
 	case eCharacterName::Player:
 		CharacterBlinkFunction(characterName, character, 3, 9, color);
