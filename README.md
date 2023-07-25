@@ -21,4 +21,28 @@ IDE : Microsoft Visual Studio 2019
 
 
 
+<특수문자 겹침 현상 해결책>
+
+다음과 같이 메세지창의 '￣'와 같은 특수문자가 원래 콘솔에서 두 칸을 차지해야 하는데
+
+그렇지 않고 서로 한 칸씩 겹쳐져서 메세지창이나 몬스터가 깨져보이는 현상이 있을 땐
+
+레거시 콘솔을 사용해야 한다.
+
+![01_new_console](https://github.com/fergcd/MonsterHunting/assets/13186723/6b11ada3-6f79-4943-9b0b-9ece0e48e766)
+
+
+![02_properties](https://github.com/fergcd/MonsterHunting/assets/13186723/7f5fd0ca-30da-4710-8920-b92b935bd3fa)
+
+
+레거시 콘솔 사용 체크 후 몹잡기를 껐다가 다시 실행한다.
+
+![03_legacy_console_check](https://github.com/fergcd/MonsterHunting/assets/13186723/a419639c-d069-4945-a393-8aeffb0ec0aa)
+
+
+이제 정상적으로 보인다.
+
+![04_legacy_console](https://github.com/fergcd/MonsterHunting/assets/13186723/775c6191-3326-45da-9805-7469a9dbb77b)
+
+
 ※ C → C++(OOP) 로 리팩토링한 버전을 저장소 'MonsterHunting_OOP'에 올림(https://github.com/fergcd/MonsterHunting_OOP.git)
